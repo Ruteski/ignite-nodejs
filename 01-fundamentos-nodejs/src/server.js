@@ -1,6 +1,31 @@
 // import http from 'node:http' // "type": "module", -> no packge.json para poder usar o import/export
 import http from 'node:http';
 
-const server = http.createServer((req, res) => res.end('Hello, lincoln!'))
+const users = []
+
+const server = http.createServer((req, res) => {
+  const {method, url} = req;
+
+  console.log(method, url)
+
+  if (method === 'GET' && url === '/users') {
+    return res
+      .setHeader('Content-type', 'application/json')
+      .end(JSON.stringify(users))
+  }
+
+  if (method === 'POST' && url === '/users') {
+    users.push({
+      id: 1,
+      name: 'Lincoln Ruteski',
+      email: 'email@remail.com'
+    })
+
+    return res.writeHead(201).end()
+
+  }
+
+  return res.writeHead(404).end('')
+})
 
 server.listen(3333);
