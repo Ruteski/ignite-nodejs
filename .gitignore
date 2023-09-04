@@ -134,3 +134,4 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+02-api-rest-nodejs/.idea/dbnavigator.xml
