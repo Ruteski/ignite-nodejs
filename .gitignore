@@ -1,10 +1,11 @@
 02-api-rest-nodejs/tmp/app.db
-02-api-rest-nodejs/database/app.db
-02-api-rest-nodejs/database/test.db
+02-api-rest-nodejs/database/*.db
 02-api-rest-nodejs/.idea
 02-api-rest-nodejs/.idea/dbnavigator.xml
 .idea
 02-api-rest-nodejs/.env.test
+02-api-rest-nodejs/build
+02-api-rest-nodejs/dist
 
 # Logs
 logs
