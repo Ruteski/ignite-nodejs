@@ -5,7 +5,7 @@
 import { knex as setupKnex, Knex } from 'knex';
 import { env } from './env';
 
-console.log(process.env);
+// console.log(process.env);
 
 export const configKnex: Knex.Config = {
   client: 'sqlite',
