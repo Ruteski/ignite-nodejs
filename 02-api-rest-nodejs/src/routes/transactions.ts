@@ -1,21 +1,24 @@
 import crypto from 'node:crypto';
 import { knex } from '../database';
 import { FastifyInstance } from 'fastify';
+import { z } from 'zod';
 
 export async function transactionRoutes(app: FastifyInstance) {
-  app.get('/hello', async () => {
-    // const transaction = await knex('transactions')
-    //   .insert({
-    //     id: crypto.randomUUID(),
-    //     title: 'Transação de teste 2',
-    //     amount: 3200,
-    //   })
-    //   .returning('*');
+  app.post('/', async (req, rep) => {
+    const createTransactionBodySchema = z.object({
+      title: z.string(),
+      amount: z.number(),
+      type: z.enum(['credit', 'debit']),
+    });
 
-    // const transaction = await knex('transactions').select('*');
+    const { title, type, amount } = createTransactionBodySchema.parse(req.body);
 
-    const transaction = await knex('transactions').where('amount', 3200).select('*');
+    await knex('transactions').insert({
+      id: crypto.randomUUID(),
+      title,
+      amount: type === 'credit' ? amount : amount * -1,
+    });
 
-    return transaction;
+    return rep.status(201).send();
   });
 }

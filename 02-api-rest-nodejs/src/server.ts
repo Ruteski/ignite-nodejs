@@ -5,7 +5,9 @@ import { transactionRoutes } from './routes/transactions';
 const app = fastify();
 
 // o fastify roda os plugin em ordem que foram registrados, cuidar com isso
-app.register(transactionRoutes);
+app.register(transactionRoutes, {
+  prefix: 'transactions',
+});
 
 app
   .listen({
