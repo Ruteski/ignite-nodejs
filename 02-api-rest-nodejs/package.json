@@ -9,6 +9,7 @@
     "knex": "node --no-warnings --loader tsx ./node_modules/knex/bin/cli.js"
   },
   "dependencies": {
+    "dotenv": "^16.3.1",
     "fastify": "^4.22.2",
     "knex": "^2.5.1",
     "sqlite3": "^5.1.6"
