@@ -1,8 +1,8 @@
-import { expect, test, beforeAll, afterAll, describe, it } from 'vitest';
+import { expect, test, beforeAll, afterAll, describe, it, beforeEach } from 'vitest';
+import { execSync } from 'node:child_process';
 import request from 'supertest';
 import { app } from '../app';
-import { create } from 'domain';
-import exp from 'constants';
+import { execFileSync } from 'child_process';
 
 describe('Transactions routes', () => {
   beforeAll(async () => {
@@ -11,6 +11,12 @@ describe('Transactions routes', () => {
 
   afterAll(async () => {
     await app.close();
+  });
+
+  beforeEach(() => {
+    // executa comandos no terminal por dentro da aplicacao
+    execSync('yarn knex migrate:rollback --all');
+    execSync('yarn knex migrate:latest');
   });
 
   it('should be able to create a new transaction', async () => {
