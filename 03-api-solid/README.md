@@ -40,3 +40,6 @@ GymPass style app.
 - npm i dotenv
   - criar src/env/index.ts
 - npm i zod
+- npm i eslint @rocketseat/eslint-config -D
+  - criar na raiz .eslintrc.json .eslintignore
+- 
