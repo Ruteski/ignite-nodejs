@@ -49,3 +49,12 @@ GymPass style app.
   - npx prisma generate 
   - npx prisma -h
 - npm i @prisma/client
+- docker run --name api-solid-pg -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=apisolid -p 5432:5432  bitnami/postgresql
+  - docker ps
+  - docker ps -a
+  - docker start nome/id
+  - docker stop nome/id
+  - docker rm nome
+  - docker logs nome
+- depois de configurado DATABSE_URL rodar npx prisma migrate dev
+- npx prisma studio
