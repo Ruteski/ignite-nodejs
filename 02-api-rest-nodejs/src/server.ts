@@ -1,7 +1,7 @@
 import { app } from './app';
 import { env } from './env';
 
-const host = 'RENDER' in process.env ? 'o.o.o.o' : 'localhost';
+const host = 'RENDER' in process.env ? '0.0.0.0' : 'localhost';
 
 app
   .listen({
