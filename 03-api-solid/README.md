@@ -37,3 +37,6 @@ GymPass style app.
 - npx tsc --init
   - target do tsconfig para es2020
 - npm i fastify
+- npm i dotenv
+  - criar src/env/index.ts
+- npm i zod
