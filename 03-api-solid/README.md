@@ -42,4 +42,4 @@ GymPass style app.
 - npm i zod
 - npm i eslint @rocketseat/eslint-config -D
   - criar na raiz .eslintrc.json .eslintignore
-- 
+- configurar aliases -> no tsconfig -> baseURL -> path
