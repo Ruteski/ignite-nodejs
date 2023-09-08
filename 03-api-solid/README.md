@@ -43,3 +43,9 @@ GymPass style app.
 - npm i eslint @rocketseat/eslint-config -D
   - criar na raiz .eslintrc.json .eslintignore
 - configurar aliases -> no tsconfig -> baseURL -> path
+- npm i prisma -D
+  - npx prisma init 
+  - criar a primeira tabela com o id
+  - npx prisma generate 
+  - npx prisma -h
+- npm i @prisma/client
