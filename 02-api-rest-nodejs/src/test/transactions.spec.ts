@@ -1,8 +1,7 @@
-import { expect, test, beforeAll, afterAll, describe, it, beforeEach } from 'vitest';
+import { expect, beforeAll, afterAll, describe, it, beforeEach } from 'vitest';
 import { execSync } from 'node:child_process';
 import request from 'supertest';
 import { app } from '../app';
-import { execFileSync } from 'child_process';
 
 describe('Transactions routes', () => {
   beforeAll(async () => {

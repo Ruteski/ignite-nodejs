@@ -7,7 +7,7 @@ import { checkSessionIdExists } from '../middlewares/check-session-id-exists';
 
 export async function transactionRoutes(app: FastifyInstance) {
   // executa em qualquer rota chamada aqui dentro
-  app.addHook('preHandler', async (req, rep) => {
+  app.addHook('preHandler', async (req) => {
     console.log(`[${req.method}] ${req.url}`);
   });
 
@@ -16,7 +16,7 @@ export async function transactionRoutes(app: FastifyInstance) {
     {
       preHandler: [checkSessionIdExists],
     },
-    async (req, rep) => {
+    async (req) => {
       const { sessionId } = req.cookies;
 
       const transactions = await knex('transactions').where('session_id', sessionId).select();
