@@ -19,6 +19,8 @@ model User {
   created_at    DateTime @default(now())
   updated_at    DateTime @default(now()) @updatedAt
 
+  checkIns CheckIn[] // nome do relacionamento que usamos dentro do js
+
   @@map("users")
 }
 
@@ -26,6 +28,12 @@ model CheckIn {
   id            String    @id @default(uuid())
   created_at    DateTime  @default(now())
   validated_ate DateTime?
+
+  user    User   @relation(fields: [user_id], references: [id])
+  user_id String
+
+  gym    Gym    @relation(fields: [gym_id], references: [id])
+  gym_id String
 
   @@map("check_ins")
 }
@@ -37,6 +45,8 @@ model Gym {
   phone       String?
   latitude    Decimal
   longitude   Decimal
+
+  checkIns CheckIn[]
 
   @@map("gyms")
 }
