@@ -61,3 +61,5 @@ GymPass style app.
 - docker-componse.yml
 - docker compose up/down -d - cria e deleta
 - docker compose stop - para o docker componse
+- npm i bcryptjs @types/bcryptjs
+- npm i @types/bcryptjs -D
