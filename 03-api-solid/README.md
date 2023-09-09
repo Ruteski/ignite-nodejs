@@ -58,3 +58,6 @@ GymPass style app.
   - docker logs nome
 - depois de configurado DATABSE_URL rodar npx prisma migrate dev
 - npx prisma studio
+- docker-componse.yml
+- docker compose up/down -d - cria e deleta
+- docker compose stop - para o docker componse
