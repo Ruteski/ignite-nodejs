@@ -1,5 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
+// npx prisma migrate dev - roda as migrates
 
 generator client {
   provider = "prisma-client-js"
@@ -11,9 +12,31 @@ datasource db {
 }
 
 model User {
-  id    String @id @default(uuid())
-  name  String
-  email String @unique
+  id            String   @id @default(uuid())
+  name          String
+  email         String   @unique
+  password_hash String   @default("")
+  created_at    DateTime @default(now())
+  updated_at    DateTime @default(now()) @updatedAt
 
   @@map("users")
+}
+
+model CheckIn {
+  id            String    @id @default(uuid())
+  created_at    DateTime  @default(now())
+  validated_ate DateTime?
+
+  @@map("check_ins")
+}
+
+model Gym {
+  id          String  @id @default(uuid())
+  title       String
+  description String?
+  phone       String?
+  latitude    Decimal
+  longitude   Decimal
+
+  @@map("gyms")
 }
