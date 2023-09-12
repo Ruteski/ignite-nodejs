@@ -46,7 +46,7 @@ describe('Register Use Case', () => {
     });
 
     // espero que promise retorne um reject e que ela seja uma instancia do tipo UserAlreadyExistsError
-    expect(() =>
+    await expect(() =>
       registerUseCase.execute({
         name: 'Jhon Doe',
         email,
