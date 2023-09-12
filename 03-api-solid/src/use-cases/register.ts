@@ -1,7 +1,7 @@
 // use-cases pode ser chamado de services tb
 
-import { prisma } from '@/lib/prisma';
 import { hash } from 'bcryptjs';
+import { UsersRepository } from '@/repositories/users-repository';
 
 interface RegisterUseCaseRequest {
   name: string;
@@ -13,14 +13,10 @@ interface RegisterUseCaseRequest {
 // D - Dependency Inversion Principle
 
 export class UserRegisterUserCase {
-  constructor(private usersRepository: any) {}
+  constructor(private usersRepository: UsersRepository) {}
 
   async execute({ name, email, password }: RegisterUseCaseRequest) {
-    const userWithSameEmail = await prisma.user.findUnique({
-      where: {
-        email,
-      },
-    });
+    const userWithSameEmail = await this.usersRepository.findByEmail(email);
 
     if (userWithSameEmail) {
       throw new Error('E-mail already exists.');
