@@ -63,5 +63,5 @@ GymPass style app.
 - docker compose stop - para o docker componse
 - npm i bcryptjs @types/bcryptjs
 - npm i @types/bcryptjs -D
-- npm i vitest vite-tsconfig-paths -D
+- npm i vitest vite-tsconfig-paths @vitest/ui -D
   - criar na raiz vite.config.ts 
