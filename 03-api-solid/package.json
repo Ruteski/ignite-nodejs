@@ -10,7 +10,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "banco:up": "docker compose up -d",
+    "banco:down": "docker compose stop"
   },
   "keywords": [],
   "author": "",
