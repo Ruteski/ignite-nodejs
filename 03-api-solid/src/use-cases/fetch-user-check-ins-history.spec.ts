@@ -1,7 +1,6 @@
 import { expect, describe, it, beforeEach, vi, afterEach } from 'vitest';
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository';
 import { FetchUserCheckInsHistoryUseCase } from '@/use-cases/fetch-user-check-ins-history';
-import { CheckIn } from '@prisma/client';
 
 let checkInsRepository: InMemoryCheckInsRepository;
 let sut: FetchUserCheckInsHistoryUseCase; // sut = system under test
