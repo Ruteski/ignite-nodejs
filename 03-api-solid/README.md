@@ -66,3 +66,4 @@ GymPass style app.
 - npm i vitest vite-tsconfig-paths @vitest/ui -D
   - criar na raiz vite.config.ts 
 - npm i dayjs 
+- npm i @fastify/jwt
