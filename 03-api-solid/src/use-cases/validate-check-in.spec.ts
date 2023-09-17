@@ -12,7 +12,7 @@ describe('Validate Check-in Use Case', () => {
     checkInsRepository = new InMemoryCheckInsRepository();
     sut = new ValidateCheckInUseCase(checkInsRepository);
 
-    // mocking de datas do vitest
+    // mocking de datas do vitest-environment-prisma
     // antes de cada teste, usar data ficticia
     vi.useFakeTimers();
   });

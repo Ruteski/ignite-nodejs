@@ -25,7 +25,7 @@ describe('Check-in Use Case', () => {
       longitude: -49.1727187,
     });
 
-    // mocking de datas do vitest
+    // mocking de datas do vitest-environment-prisma
     // antes de cada teste, usar data ficticia
     vi.useFakeTimers();
   });

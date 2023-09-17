@@ -67,3 +67,7 @@ GymPass style app.
   - criar na raiz vite.config.ts 
 - npm i dayjs 
 - npm i @fastify/jwt
+- criar pasta "vitest-environment-prisma" dentro da pasta prisma da raiz do projeto
+  - dentro dessa pasta executar: npm init -y
+  - executar: npm link
+  - executar: npm link vitest-environment-prisma
