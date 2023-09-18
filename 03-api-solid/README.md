@@ -71,3 +71,4 @@ GymPass style app.
   - dentro dessa pasta executar: npm init -y
   - executar: npm link
   - executar: npm link vitest-environment-prisma
+- npm i -D npm-run-all
