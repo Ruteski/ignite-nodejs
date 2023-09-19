@@ -8,6 +8,8 @@
 02-api-rest-nodejs/dist
 01-api-rest-nodejs/.
 01-fundamentos-nodejs/.lh/
+05-nest-clean/data
+05-nest-clean/dist
 
 # Logs
 logs
