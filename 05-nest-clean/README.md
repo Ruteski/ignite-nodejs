@@ -80,3 +80,5 @@ Nest is [MIT licensed](LICENSE).
 - yarn add @rocketseat/eslint-config -D
 - yarn add bcryptjs
 - yarn add -D @types/bcryptjs
+- yarn add zod
+- yarn add zod-validation-error
