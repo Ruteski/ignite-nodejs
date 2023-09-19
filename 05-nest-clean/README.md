@@ -74,3 +74,6 @@ Nest is [MIT licensed](LICENSE).
 
 ## Comandos
 - yarn add eslint @rocketseat/eslint-config -D
+- yarn add prisma -D
+- yarn add @prisma/client
+- rodar: yarn prisma init
