@@ -77,3 +77,6 @@ Nest is [MIT licensed](LICENSE).
 - yarn add prisma -D
 - yarn add @prisma/client
 - rodar: yarn prisma init
+- yarn add @rocketseat/eslint-config -D
+- yarn add bcryptjs
+- yarn add -D @types/bcryptjs
