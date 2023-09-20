@@ -83,7 +83,7 @@ Nest is [MIT licensed](LICENSE).
 - yarn add zod
 - yarn add zod-validation-error
 - yarn add @nestjs/config // acesso ao env 
-- yarn add @nestjs/passport @nestjs/jwt
+- yarn add @nestjs/passport @nestjs/jwt passport
 
 ## Gerando RSA private e public no wsl ubuntu
 ### Gerar a chave privada
