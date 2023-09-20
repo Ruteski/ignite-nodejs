@@ -84,3 +84,30 @@ Nest is [MIT licensed](LICENSE).
 - yarn add zod-validation-error
 - yarn add @nestjs/config // acesso ao env 
 - yarn add @nestjs/passport @nestjs/jwt
+
+## Gerando RSA private e public no wsl ubuntu
+### Gerar a chave privada
+- openssl genpkey -algorithm RSA -out private.key -pkeyopt rsa_keygen_bits:2048
+- ou
+- openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048
+
+### Gerar a chave pública
+- openssl rsa -pubout -in private.key -out public.key -outform PEM
+- ou
+- openssl rsa -pubout -in private_key.pem -out public_key.pem -outform PEM
+
+### Os itens abaixo rodar em um unico comando, concatenando com && no final de cada comando
+#### JWT_PRIVATE_KEY=$(openssl base64 -in private.key -A) && JWT_PUBLIC_KEY=$(openssl base64 -in public.key -A) && echo "JWT_PRIVATE_KEY=\"$JWT_PRIVATE_KEY\"" >> .env && echo "JWT_PUBLIC_KEY=\"$JWT_PUBLIC_KEY\"" >> .env
+### Converter a chave privada para base64
+- JWT_PRIVATE_KEY=$(openssl base64 -in private.key -A)
+
+### Converter a chave pública para base64
+- JWT_PUBLIC_KEY=$(openssl base64 -in public.key -A)
+
+### Adicionar as chaves ao arquivo .env
+- echo "JWT_PRIVATE_KEY=\"$JWT_PRIVATE_KEY\"" >> .env
+- echo "JWT_PUBLIC_KEY=\"$JWT_PUBLIC_KEY\"" >> .env
+
+### Remover os arquivos de chave
+- rm private.key public.key
+
