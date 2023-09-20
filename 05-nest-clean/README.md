@@ -83,3 +83,4 @@ Nest is [MIT licensed](LICENSE).
 - yarn add zod
 - yarn add zod-validation-error
 - yarn add @nestjs/config // acesso ao env 
+- yarn add @nestjs/passport @nestjs/jwt
