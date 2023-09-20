@@ -82,3 +82,4 @@ Nest is [MIT licensed](LICENSE).
 - yarn add -D @types/bcryptjs
 - yarn add zod
 - yarn add zod-validation-error
+- yarn add @nestjs/config // acesso ao env 
