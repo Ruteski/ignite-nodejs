@@ -6,6 +6,7 @@
     "camelcase": "off",
     "no-useless-constructor": "off",
     "no-empty-function": "off",
+    "no-new": "off",
     "prettier/prettier": [
       "error",
       {

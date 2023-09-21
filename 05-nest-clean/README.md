@@ -73,6 +73,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 Nest is [MIT licensed](LICENSE).
 
 ## Comandos
+- yarn tsc --noEmit ??
 - yarn add eslint @rocketseat/eslint-config -D
 - yarn add prisma -D
 - yarn add @prisma/client
@@ -87,6 +88,8 @@ Nest is [MIT licensed](LICENSE).
 - yarn add -D vitest unplugin-swc @swc/core @vitest/coverage-v8 vite-tsconfig-paths
 - yarn add -D dotenv
 - yarn add -D supertest @types/supertest
+- yarn add -D @faker-js/faker
+- yarn add dayjs
 
 
 ## Gerando RSA private e public no wsl ubuntu
