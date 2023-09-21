@@ -85,6 +85,7 @@ Nest is [MIT licensed](LICENSE).
 - yarn add @nestjs/config // acesso ao env 
 - yarn add @nestjs/passport @nestjs/jwt passport passport-jwt
 - yarn add -D vitest unplugin-swc @swc/core @vitest/coverage-v8 vite-tsconfig-paths
+- yarn add -D dotenv
 
 
 ## Gerando RSA private e public no wsl ubuntu
