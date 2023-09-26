@@ -2,30 +2,44 @@ import { QuestionsRepository } from '@/domain/forum/application/repositories/que
 import { PaginationParams } from '@/core/repositories/pagination-params';
 import { Question } from '@/domain/forum/enterprise/entities/question';
 import { Injectable } from '@nestjs/common';
+import { PrismaService } from '@/infra/database/prisma/prisma.service';
+import { PrismaQuestionMapper } from '@/infra/database/prisma/mappers/prisma-question-mapper';
 
 @Injectable()
 export class PrismaQuestionRepository implements QuestionsRepository {
-  create(question: Question): Promise<void> {
+  constructor(private readonly prisma: PrismaService) {}
+
+  async create(question: Question): Promise<void> {
     throw new Error('Method not Implemented.');
   }
 
-  delete(question: Question): Promise<void> {
+  async delete(question: Question): Promise<void> {
     throw new Error('Method not Implemented.');
   }
 
-  findById(id: string): Promise<Question | null> {
+  async findById(id: string): Promise<Question | null> {
+    const question = await this.prisma.question.findUnique({
+      where: {
+        id,
+      },
+    });
+
+    if (!question) {
+      return null;
+    }
+
+    return PrismaQuestionMapper.toDomain(question);
+  }
+
+  async findBySlug(slug: string): Promise<Question | null> {
     throw new Error('Method not Implemented.');
   }
 
-  findBySlug(slug: string): Promise<Question | null> {
+  async findManyRecent(params: PaginationParams): Promise<Question[]> {
     throw new Error('Method not Implemented.');
   }
 
-  findManyRecent(params: PaginationParams): Promise<Question[]> {
-    throw new Error('Method not Implemented.');
-  }
-
-  save(question: Question): Promise<void> {
+  async save(question: Question): Promise<void> {
     throw new Error('Method not Implemented.');
   }
 }
