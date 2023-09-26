@@ -72,6 +72,13 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 
+## SOLID
+- Single Responsibility
+- Open Closed Principle
+- Liskov
+- Intenface Segregation
+- Dependency invension
+
 ## Comandos
 - yarn tsc --noEmit ??
 - yarn add eslint @rocketseat/eslint-config -D
