@@ -1,9 +1,8 @@
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
-import { ConfigService } from '@nestjs/config';
-import { Env } from '@/infra/env';
 import { string, z } from 'zod';
 import { Injectable } from '@nestjs/common';
+import { EnvService } from '@/infra/env/env.service';
 
 const tokenPayloadSchema = z.object({
   sub: string().uuid(),
@@ -14,8 +13,8 @@ export type UserPayload = z.infer<typeof tokenPayloadSchema>;
 // VALIDA QUE O USUARIO ESTA LOGADO
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor(config: ConfigService<Env, true>) {
-    const publicKey = config.get('JWT_PUBLIC_KEY', { infer: true });
+  constructor(env: EnvService) {
+    const publicKey = env.get('JWT_PUBLIC_KEY');
 
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
