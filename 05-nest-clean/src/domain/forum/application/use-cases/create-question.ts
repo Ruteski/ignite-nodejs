@@ -20,6 +20,7 @@ type CreateQuestionUseCaseResponse = Either<
   }
 >;
 
+// TODO: arrumar falha no teste e2e
 @Injectable()
 export class CreateQuestionUseCase {
   constructor(private questionsRepository: QuestionsRepository) {}
